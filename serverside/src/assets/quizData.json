@@ -1,0 +1,262 @@
+[
+  { "id" : 1,
+    "subject": "Mathematics",
+    "questions": [
+      {
+        "question": "A group of market women sell at least one of yam, plantain and maize. 12 of them sell maize, 10 sell yam and 14 sell plantain. 5 sell plantain and maize, 4 sell yam and maize, 2 sell yam and plantain only while 3 sell all the three items. How many women are in the group?",
+        "options": ["25", "19", "18", "17"],
+        "correctAnswer": "25"
+      },
+      {
+        "question": "The first term of a geometric progression is twice its common ratio. Find the sum of the first two terms of the G.P if its sum to infinity is 8.",
+        "options": ["8/15", "8/3", "72/25", "56/9"],
+        "correctAnswer": "72/25"
+      },
+      {
+        "question": "What is the area of a square with side length 5?",
+        "options": ["20", "25", "30", "35"],
+        "correctAnswer": "25"
+      },
+      {
+        "question": "If a = 3 and b = 7, what is a + b?",
+        "options": ["8", "10", "12", "14"],
+        "correctAnswer": "10"
+      },
+      {
+        "question": "What is the square root of 81?",
+        "options": ["7", "8", "9", "10"],
+        "correctAnswer": "9"
+      },
+      {
+        "question": "If the angle is 90 degrees, what type of angle is it?",
+        "options": ["Acute", "Right", "Obtuse", "Straight"],
+        "correctAnswer": "Right"
+      },
+      {
+        "question": "What is the value of π (pi) to two decimal places?",
+        "options": ["3.14", "3.16", "3.18", "3.20"],
+        "correctAnswer": "3.14"
+      },
+      {
+        "question": "If a triangle has angles 45°, 45°, and 90°, what type of triangle is it?",
+        "options": ["Equilateral", "Isosceles", "Scalene", "Right-angled"],
+        "correctAnswer": "Right-angled"
+      },
+      {
+        "question": "What is the perimeter of a rectangle with length 8 and width 5?",
+        "options": ["16", "26", "36", "46"],
+        "correctAnswer": "26"
+      },
+      {
+        "question": "If 2x = 16, what is the value of x?",
+        "options": ["4", "6", "8", "10"],
+        "correctAnswer": "8"
+      }
+    ]
+  },
+  {   
+      "id" : 2,
+      "subject": "Use of English",
+      "questions": [
+        {
+          "question": "Which of the following is a pronoun?",
+          "options": ["Book", "She", "Table", "Car"],
+          "correctAnswer": "She"
+        },
+        {
+          "question": "Identify the antonym of 'happy'.",
+          "options": ["Sad", "Angry", "Excited", "Joyful"],
+          "correctAnswer": "Sad"
+        },
+        {
+          "question": "Choose the correct spelling: 'Occasion' or 'Occassion'?",
+          "options": ["Occasion", "Occassion", "Ocasion", "Ocation"],
+          "correctAnswer": "Occasion"
+        },
+        {
+          "question": "What part of speech is the word 'quickly'?",
+          "options": ["Noun", "Verb", "Adjective", "Adverb"],
+          "correctAnswer": "Adverb"
+        },
+        {
+          "question": "Which sentence is grammatically correct?",
+          "options": [
+            "She don't like coffee.",
+            "She doesn't like coffee.",
+            "She not like coffee.",
+            "She not liking coffee."
+          ],
+          "correctAnswer": "She doesn't like coffee."
+        },
+        {
+          "question": "Identify the subject in the sentence: 'The cat is sleeping.'",
+          "options": ["Cat", "Is", "Sleeping", "The"],
+          "correctAnswer": "Cat"
+        },
+        {
+          "question": "What is the plural form of 'child'?",
+          "options": ["Childs", "Childen", "Children", "Child's"],
+          "correctAnswer": "Children"
+        },
+        {
+          "question": "Choose the correct preposition: 'He is good ___ playing the piano.'",
+          "options": ["At", "On", "In", "With"],
+          "correctAnswer": "At"
+        },
+        {
+          "question": "What is a synonym for 'brilliant'?",
+          "options": ["Dull", "Bright", "Smart", "Stupid"],
+          "correctAnswer": "Bright"
+        },
+        {
+          "question": "Which sentence is in the past tense?",
+          "options": [
+            "She will go to the store.",
+            "She goes to the store.",
+            "She is going to the store.",
+            "She went to the store."
+          ],
+          "correctAnswer": "She went to the store."
+        }
+      ]
+    },
+ {
+  "id" : 3,
+  "subject": "Physics",
+  "questions": [
+    {
+      "question": "What is the SI unit of force?",
+      "options" : ["Newton", "Watt", "Joule", "Ohm"],
+      "correctAnswer": "Newton"
+    },
+    {
+      "question": "Define the term 'acceleration.'",
+      "options": [
+        "The force applied to an object",
+        "The rate of change of velocity",
+        "The mass of an object",
+        "The distance traveled by an object"
+      ],
+      "correctAnswer": "The rate of change of velocity"
+    },
+    {
+      "question": "What is the formula for calculating work?",
+      "options": [
+        "Work = Force × Distance",
+        "Work = Mass × Acceleration",
+        "Work = Power × Time",
+        "Work = Energy / Time"
+      ],
+      "correctAnswer": "Work = Force × Distance"
+    },
+    {
+      "question": "Which law of motion states 'For every action, there is an equal and opposite reaction'?",
+      "options": ["First Law", "Second Law", "Third Law", "Zeroth Law"],
+      "correctAnswer": "Third Law"
+    },
+    {
+      "question": "What is the formula for calculating kinetic energy?",
+      "options": [
+        "Kinetic Energy = Mass × Velocity",
+        "Kinetic Energy = Force × Distance",
+        "Kinetic Energy = Power × Time",
+        "Kinetic Energy = Potential Energy / Height"
+      ],
+      "correctAnswer": "Kinetic Energy = Mass × Velocity"
+    },
+    {
+      "question": "What is the unit of electric current?",
+      "options": ["Volt", "Ampere", "Ohm", "Watt"],
+      "correctAnswer": "Ampere"
+    },
+    {
+      "question": "What is the speed of light in a vacuum?",
+      "options": ["300,000 km/s", "500,000 km/s", "700,000 km/s", "1,000,000 km/s"],
+      "correctAnswer": "300,000 km/s"
+    },
+    {
+      "question": "What is the law of conservation of energy?",
+      "options": [
+        "Energy can be created but not destroyed",
+        "Energy cannot be created or destroyed, only transformed",
+        "Energy is always decreasing",
+        "Energy is always increasing"
+      ],
+      "correctAnswer": "Energy cannot be created or destroyed, only transformed"
+    },
+    {
+      "question": "What is the formula for calculating power?",
+      "options": [
+        "Power = Force × Distance",
+        "Power = Work / Time",
+        "Power = Mass × Acceleration",
+        "Power = Energy × Time"
+      ],
+      "correctAnswer": "Power = Work / Time"
+    },
+    {
+      "question": "What is the unit of magnetic flux?",
+      "options": ["Tesla", "Weber", "Ampere", "Henry"],
+      "correctAnswer": "Weber"
+    }
+  ]
+},
+{
+  "id" : 4,
+  "subject": "Chemistry",
+  "questions": [
+ {
+  "question": "What is the chemical symbol for water?",
+  "options": ["H2O", "CO2", "O2", "NaCl"],
+  "correctAnswer": "H2O"
+},
+{
+  "question": "Which element has the chemical symbol 'O'?",
+  "options": ["Oxygen", "Gold", "Iron", "Silver"],
+  "correctAnswer": "Oxygen"
+},
+{
+  "question": "What is the pH scale used to measure?",
+  "options": ["Temperature", "Acidity", "Pressure", "Density"],
+  "correctAnswer": "Acidity"
+},
+{
+  "question": "What is the chemical formula for methane?",
+  "options": ["CH4", "C2H6", "CO2", "H2O"],
+  "correctAnswer": "CH4"
+},
+{
+  "question": "Which gas is responsible for the Earth's ozone layer?",
+  "options": ["Oxygen", "Nitrogen", "Ozone", "Carbon Dioxide"],
+  "correctAnswer": "Ozone"
+},
+{
+  "question": "What is the chemical symbol for gold?",
+  "options": ["Au", "Ag", "Cu", "Fe"],
+  "correctAnswer": "Au"
+},
+{
+  "question": "What is the process of converting a liquid into a gas called?",
+  "options": ["Condensation", "Evaporation", "Sublimation", "Melting"],
+  "correctAnswer": "Evaporation"
+},
+{
+  "question": "Which element is a noble gas?",
+  "options": ["Helium", "Nitrogen", "Oxygen", "Carbon"],
+  "correctAnswer": "Helium"
+},
+{
+  "question": "What is the chemical formula for table salt?",
+  "options": ["NaCl", "KCl", "HCl", "CaCl2"],
+  "correctAnswer": "NaCl"
+},
+{
+  "question": "Which gas is commonly known as laughing gas?",
+  "options": ["Oxygen", "Nitrogen", "Carbon Dioxide", "Nitrous Oxide"],
+  "correctAnswer": "Nitrous Oxide"
+
+}
+
+]
+}
+]
