@@ -29,7 +29,6 @@ const addUser = (req, res) => {
     .then((user) => {
         //console.log(user);
         res.status(200).json({message: "created successfully"});
-    //    res.redirect("/user/login");
     })
     .catch((err) => {
         res.status(404).json({message: "error", err});
@@ -73,7 +72,7 @@ const userLogin = (req, res) => {
            return res.status(404).json({message: "Incorrect Password."});
          //   req.flash("formData", req.body);
         }
-        res.status(200).json({message: "Logged In", token});
+        res.status(200).json({message: "Logged In", token, user});
     })
     .catch(error => {
         res.status(404).json({message: "error", error});
