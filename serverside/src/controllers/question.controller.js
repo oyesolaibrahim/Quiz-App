@@ -1,8 +1,6 @@
 const Question = require("../models/question.model");
 
 const createQuestion = (req, res) => {
-//    console.log(req.body)
-//    res.json({message: "cool"});
 
     if (!req.body.subject || !req.body.question || !req.body.option1 || !req.body.option2 || !req.body.option3 || !req.body.option4) {
     return res.status(400).json({message: "A required field is misssing"})
