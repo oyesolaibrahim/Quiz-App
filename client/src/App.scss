@@ -1,0 +1,614 @@
+*{
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+.flex {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.start {
+  justify-content: flex-start;
+  align-items: center;
+}
+.flex-end {
+  justify-content: flex-end;
+  align-items: center;
+}
+.start-align {
+  align-items: flex-start;
+}
+body {
+  background-color: #552e5a;
+  color: white;
+  margin: 100px 200px;
+}
+
+.selected {
+  background-color: red;
+  padding: 20px;
+}
+.italic {
+  font-style: italic;
+} 
+h2 {
+  max-width: 400px;
+  line-height: 2.0rem;
+  margin-top: 30px;
+  margin-right: 20px;
+}
+
+.options, .options2 {
+  border-radius: 10px;
+  background-color: #7f3f88;
+  padding: 10px;
+  width: 200%;
+  margin: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: rgb(69, 161, 69);
+  }
+  & > h6 {
+    background-color: white;
+    color: #552e5a;
+    margin-right: 30px;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 1.2rem;
+  }
+  & > p {
+    font-weight: 500;
+  }
+}
+button {
+  background-color: blue;
+  width: 200%;
+  padding: 20px 10px;
+  border-radius: 10px;
+  border-style: none;
+  color: white;
+  font-weight: 500;
+  font-size: 1.0rem;
+  margin: 15px;
+  cursor: pointer;
+
+  &:hover {
+    background-color: crimson;
+  }
+}
+.welcome-div {
+  margin-top: -50px;
+  margin-bottom: 150px;
+}
+h1 {
+  margin-bottom: 40px;
+  font-weight: 350;
+  max-width: 220px;
+
+  span {
+    font-weight: 700;
+  }
+}
+.options2 {
+width: 150%;
+}
+.score-container{
+  background-color: #7f3f88;
+  width: 150%;
+  margin: 15px;
+  border-radius: 10px;
+
+  & > h1 {
+    margin: auto 10%;
+    padding: 60px;
+    font-weight: 700;
+    font-size: 5.0rem;
+  }
+}
+.play-again {
+  width: 150%;
+}
+.admin-singup {
+  text-align: center;
+}
+.login-form {
+  margin-left: 30%;
+}
+.form-body {
+  margin-top: -95px;
+  margin-left: 30%;
+}
+.form-container { 
+  border-style:hidden;
+  background-color:#fff;
+  border-radius:10px;
+  padding:30px;
+  width:80%;
+  height:50%;
+  box-shadow: 0px 5px 5px hsla(249, 10%, 26%, 0.5);
+
+  h6 {
+    color: #552e5a;
+  }
+}
+input#jonathan {
+  border-color: hsl(246, 25%, 77%);
+}
+input {
+  margin: 10px 0px;
+  padding:10px;
+  padding-left:20px;
+  width:100%;
+  border-color: hsla(246, 25%, 77%, 0.3);
+  border-width: thin;
+  border-radius: 5px;
+  font-weight: 700;
+}
+.fa {
+  margin-right: 10px;
+}
+.error {
+  color: red;
+}
+.signup, #try-it-free{
+  width: 100%;
+  margin: 10px 0px;
+}
+ #try-it-free {
+  width: 80%;
+  margin: 30px 0px;
+ }
+ header {
+  margin-top: -70px;
+ }
+ .landing-page {
+  margin: 100px 0px;
+
+  div h1 {
+    font-weight: 700;
+  }
+  div h2 {
+    max-width: 100%;
+    margin-bottom: 30px;
+  }
+  div button {
+    width: 20%;
+    display: inline-block;
+    background-color: crimson;
+    padding: 10px;
+    border-radius: 5px;
+    border-style: none;
+    color: white;
+    font-weight: 500;
+    font-size: 4.0rem;
+    margin-top: 10px;
+  }
+  div p {
+    margin-bottom: 40px;
+  }
+  div:Link.header-login {
+    display: block;
+    color: white;
+    text-decoration: none;
+    background-color: crimson;
+  }
+ }
+ img {
+  width: 50%;
+  margin-left: 300px;
+ }
+ li {
+   list-style-type: none;
+   a {
+    color: white;
+   text-decoration: none;
+  }
+  
+  }
+  .header-signup, .header-login {
+    border: 1px solid white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    
+    &:hover {
+      background-color: crimson;
+    }
+  }
+ .header-login {
+  margin-right: 30px;
+ }
+ .left {
+  position: absolute;
+  left: 40px;
+ }
+ 
+ .right {
+  position: absolute;
+  right: 40px;
+ }
+
+ @media screen and (max-width:1200px) {
+    body {
+      margin: 0px;
+    }
+    .landing-page {
+      margin: 100px;
+    }
+    .start-align {
+      div h1, div p {
+        margin: 30px 120px;
+        max-width: 1000px;
+      }
+      div div {
+        margin: 20px 50%;
+      }
+    }
+    .flex {
+      flex-direction: column;
+    }
+    img {
+      margin: 100px auto;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+    .options {
+      flex-direction: row;
+    
+      & > h6 {
+        margin-right: -30px;
+        padding: 2px 10px;
+      }
+    }
+     .options2 {
+      flex-direction: row;
+    
+      & > h6 {
+        padding: 2px 10px;
+      }
+    }
+    
+    
+    h2 {
+      max-width: 400px;
+      line-height: 2.0rem;
+      margin-top: 30px;
+    }
+    .question {
+      align-items: flex-start;
+
+      div.options, div button {
+        width: 100%;
+      }
+      div.options {
+        padding: 1px 10px;
+      }
+      div, div button {
+        margin: 20px 40px;
+
+        p, h2 {
+          margin: 20px 50px;
+        }
+      }
+    }
+    .flex-end {
+      flex-direction: row;
+      justify-content: flex-end;
+      align-items: center;
+    }
+  .header-signup, .header-login {
+    padding: 10px 20px;
+    margin-right: 20px;
+  }
+ header {
+  margin-top: 30px;
+ }
+ .result-body {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin: 0px;
+
+  div h1.completed {
+    min-width: 80%;
+    margin-left: 30%;
+  }
+ }
+ .score-container{
+   width: 100%;
+   margin: 15px;
+ 
+   & > h1 {
+     margin: auto 100%;
+     padding: 40px;
+     font-weight: 700;
+     font-size: 5.0rem;
+   }
+ }
+ 
+.play-again {
+  width: 100%;
+  margin: auto 50%;
+}
+.welcome-div {
+  margin-top: 20px;
+}
+
+ @media screen and (max-width:740px) {
+  
+ .result-body {
+  justify-content: flex-start;
+  align-items: flex-start;
+  margin-top: 70px;
+
+  div h1.completed {
+    min-width: 80%;
+    margin-left: 10%;
+  }
+ }
+ .score-container{
+   width: 100%;
+   margin: auto 10%;
+  position: relative;
+   right: 45%;
+ 
+  & > h1 {
+     margin: auto 80%;
+     padding: 40px;
+     font-weight: 700;
+     font-size: 5.0rem;
+    
+   }
+ }
+ 
+.play-again {
+  width: 100%;
+  margin: auto 5%;
+} 
+div.options, div button {
+  width: 80%;
+}
+ }
+ @media screen and (max-width:600px) {
+  .landing-page {
+    div h1 {
+      max-width: 100%;
+    }
+    div h2 {
+      min-width: 120%;
+    }
+  }
+  .question {
+    align-items: flex-start;
+
+    div.options, div button {
+      width: 100%;
+    }
+    div.options {
+  
+      & > h6 {
+        margin-right: -10px;
+      }
+   
+    }
+   
+    div, div button {
+      margin: 20px 10px;
+
+      p, h2 {
+        margin: 20px 20px;
+      }
+    }
+  }
+  
+ }
+ @media screen and (max-width:545px) {
+  
+  .score-container{
+    width: 100%;
+    margin: auto 10%;
+    position: relative;
+    right: 45%;
+  
+   & > h1 {
+      padding: 40px 20px;
+      font-weight: 700;
+      font-size: 3.0rem;
+     
+    }
+  }
+  
+ .play-again {
+   width: 100%;
+   margin: auto 5%;
+ } 
+ }
+ @media screen and (max-width:500px) {
+  .form-body, .login-form {
+    margin-top: 70px;
+    margin-left: 10%;
+  }
+  .form-container {
+    padding:20px;
+    width:80%;
+    height:40vh;
+  
+  }
+  .form-body {
+    div.form-container {
+      height: 40%;
+    }
+  }
+  .start-align {
+    margin-top: 70px;
+    div h1, div p {
+      margin: 30px 25px;
+      max-width: 100%;
+    }
+    div div {
+      margin: 20px 10%;
+    }
+  }
+  .options2 {
+  width: 150%;
+  }
+  .result-body {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 70px;
+  
+    div h1.completed {
+      min-width: 80%;
+      margin-left: 10%;
+    }
+   }
+   .score-container{
+     width: 100%;
+     margin: auto 10%;
+    position: relative;
+     left: 0%;
+   
+    & > h1 {
+       margin: auto 10%;
+       padding: 40px;
+       font-weight: 700;
+       font-size: 5.0rem;
+      
+     }
+   }
+   
+  .play-again {
+    width: 100%;
+    margin: auto 10%;
+  } 
+   
+.left {
+  max-width: 130px;
+}
+ }
+ }
+ @media screen and (max-width:385px) {
+  
+  .start-align {
+    div h1, div p {
+      margin: 30px 25px;
+      max-width: 100%;
+    }
+    div div {
+      margin: 20px 10%;
+    }
+  }
+  .options2 {
+  width: 130%;
+  }
+  .score-container{
+    width: 100%;
+    margin: auto 10%;
+   position: relative;
+    left: 0%;
+  
+   & > h1 {
+      margin: auto 0%;
+      padding: 40px;
+      font-weight: 700;
+      font-size: 4.0rem;
+     
+    }
+  }
+  
+ .play-again {
+   width: 100%;
+   position: relative;
+   /*left: -35%;*/
+ }  
+}
+ 
+ @media screen and (max-width:355px) {
+  .result-body {
+    justify-content: flex-start;
+    align-items: flex-start;
+    margin-top: 70px;
+    padding: 0px;
+  
+    div h1.completed {
+      max-width: 20%;
+      margin-left: 10%;
+    }
+   }
+   .score-container{
+     width: 100%;
+     margin: auto 10%;
+    position: relative;
+     left: 0%;
+   
+    & > h1 {
+       margin: auto 0%;
+       padding: 40px;
+       font-weight: 700;
+       font-size: 4.0rem;
+      
+     }
+   }
+   
+  .play-again {
+    width: 100%;
+    position: relative;
+    /*left: -35%;*/
+  }  
+ }
+ @media screen and (max-width:350px) {
+  .landing-page {
+    
+    div h2 {
+      min-width: 100%;
+    }
+  }
+  .question {
+    div.options, div button {
+      width: 150%;
+    }
+  }
+  .options2 {
+  width: 100%;
+  }
+ }
+ @media screen and (max-width:335px) {
+ 
+   .score-container{
+   
+    & > h1 {
+       font-size: 2.0rem;
+      
+     }
+   }
+   
+ }
+ @media screen and (max-width: 300px) {
+  .score-container{
+    width: 70%;
+    margin: auto 10%;
+   position: relative;
+    left: 0%;
+  
+   & > h1 {
+    position: relative;
+    right: 20%;
+    }
+  }
+  
+ .play-again {
+   width: 70%;
+   position: relative;
+   left: 0%;
+ } }
+ @media screen and (max-width:270px) {
+  .question {
+    div.options, div button {
+      width: 100%;
+    }
+  }
+  .options2 {
+  width: 100%;
+  }
+ }
