@@ -21,7 +21,7 @@ const Navigate = useNavigate();
 const optio = (e) => {
     console.log(e.target.classList);
     e.target.classList.add("selected");
-    //setSelectedOption(e.target.lastChild.innerHTML);
+    setSelectedOption(e.target.lastChild.innerHTML);
 }
 
 const submtAnswer = () => {
