@@ -2,9 +2,6 @@ const User = require("../models/user.model");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-const userSignupPage = (req, res) => {
-    res.status(200).json({message: "user_signup successful"});
-}
 
 const addUser = (req, res) => {
     
@@ -62,7 +59,6 @@ const userLogin = (req, res) => {
 
 
 module.exports = {
-    userSignupPage,
     addUser,
     userLogin
 }

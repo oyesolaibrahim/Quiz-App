@@ -1,14 +1,19 @@
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
+import axios from "axios";
 
 const Subjects = () => {
     let location = useLocation();    
+    const {state} = location
     let Navigate = useNavigate();
     let [subjectIndex, setSubjectIndex] = useState(0);
     let [data, setData] = useState(null);
     let [login, setLogin] = useState(false);
-    let [user, setUser] = useState(null);
+    let [user, setUser] = useState("");
+    //const [email, setEmail] = useState(state.email);
+    //const [password, setPassword] = useState(state.password);
+    //const [error, setError] = useState(null);
     const [token, setToken] = useState(localStorage.getItem('token'));
 
 
@@ -24,13 +29,11 @@ const Subjects = () => {
         .catch((err) => {
         console.log(err);
         })
-        const {state} = location
-        //console.log(state.user);
+        
         //setUser(state.user);
         !login && setLogin(true)
     }, [])
-        console.log(user);
-
+        
     let mathematics = data ? data[subjectIndex].subject : "";
     let UOE = data ? data[subjectIndex+1].subject : "";
     let PHY = data ? data[subjectIndex+2].subject : "";
@@ -65,7 +68,7 @@ const Subjects = () => {
         {token ? ( 
             <body className="">  
         <div className="flex welcome-div">
-          <h4 className="left">Welcome ! You are logged in.</h4>
+          <h4 className="left">Welcome {user}! You are logged in.</h4>
           <Link style={{ textDecoration: "none", color: "white" }} className="header-login right" onClick={handleLogout}>Logout</Link>
         </div>
             

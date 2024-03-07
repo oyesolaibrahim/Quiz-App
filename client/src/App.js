@@ -8,9 +8,9 @@ import UserSignUp from './components/User-signup';
 import Subjects from './components/Subjects';
 import Result from './components/Result';
 import LandingPage from './components/Landing-page';
-import Testing from './components/testing';
 import  axios  from 'axios';
 import { useState } from 'react';
+import CreateQuestion from './components/CreateQuestion';
 
 function App() {
   
@@ -49,6 +49,7 @@ const [password, setPassword] = useState("");
         <Route path='/user/signup' element={<UserSignUp/>}></Route>
         <Route path='/subjects' element={<Subjects/>}></Route>
         <Route path='/result' element={<Result/>}></Route>
+        <Route path='/newquestion' element={<CreateQuestion/>}></Route>
       </Routes>
     </BrowserRouter>
   );

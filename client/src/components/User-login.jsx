@@ -26,11 +26,15 @@ const UserLogin = () => {
       .then((result) => {
         const token = result.data.token;
         const user = result.data.user.firstName;
+        const email = result.data.user.email;
+        const password = result.data.user.password;
          console.log(result);
          console.log(user);
+         console.log(email);
+         console.log(password);
          localStorage.setItem('token', token);
          setLogin(true);
-         Navigate("/subjects", {state: {user}});
+         Navigate("/subjects", {state: {email, password}});
 
         })
       . catch ((error) => {

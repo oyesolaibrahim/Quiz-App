@@ -28,7 +28,6 @@ body {
 
 .selected {
   background-color: red;
-  padding: 20px;
 }
 .italic {
   font-style: italic;
@@ -47,6 +46,7 @@ h2 {
   width: 200%;
   margin: 15px;
   cursor: pointer;
+
 
   &:hover {
     background-color: rgb(69, 161, 69);
@@ -305,6 +305,10 @@ input {
  header {
   margin-top: 30px;
  }
+ 
+.create-question {
+  margin: auto; 
+}
  .result-body {
   justify-content: flex-start;
   align-items: flex-start;
@@ -317,20 +321,23 @@ input {
  }
  .score-container{
    width: 100%;
-   margin: 15px;
+   margin: auto 10%;
+  position: relative;
+   right: 45%;
  
-   & > h1 {
-     margin: auto 100%;
+  & > h1 {
+     margin: auto 80%;
      padding: 40px;
      font-weight: 700;
      font-size: 5.0rem;
+    
    }
  }
  
 .play-again {
   width: 100%;
-  margin: auto 50%;
-}
+  margin: auto 5%;
+} 
 .welcome-div {
   margin-top: 20px;
 }
@@ -401,6 +408,25 @@ div.options, div button {
       }
     }
   }
+  .score-container{
+    width: 80%;
+    margin: auto 10%;
+   position: relative;
+    right: 45%;
+  
+   & > h1 {
+      margin: auto 80%;
+      padding: 40px;
+      font-weight: 700;
+      font-size: 5.0rem;
+     
+    }
+  }
+  
+ .play-again {
+   width: 80%;
+   margin: auto 5%;
+ } 
   
  }
  @media screen and (max-width:545px) {
@@ -464,13 +490,13 @@ div.options, div button {
     }
    }
    .score-container{
-     width: 100%;
+     width: 90%;
      margin: auto 10%;
     position: relative;
      left: 0%;
    
     & > h1 {
-       margin: auto 10%;
+       margin: auto 1%;
        padding: 40px;
        font-weight: 700;
        font-size: 5.0rem;
@@ -479,7 +505,7 @@ div.options, div button {
    }
    
   .play-again {
-    width: 100%;
+    width: 90%;
     margin: auto 10%;
   } 
    
@@ -512,7 +538,7 @@ div.options, div button {
       margin: auto 0%;
       padding: 40px;
       font-weight: 700;
-      font-size: 4.0rem;
+      font-size: 3.0rem;
      
     }
   }
@@ -546,7 +572,7 @@ div.options, div button {
        margin: auto 0%;
        padding: 40px;
        font-weight: 700;
-       font-size: 4.0rem;
+       font-size: 3.0rem;
       
      }
    }
