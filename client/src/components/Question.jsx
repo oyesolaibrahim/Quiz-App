@@ -25,12 +25,9 @@ const optio = (e) => {
         button.classList.remove('selected');
     });
 
-    // Add the 'selected' class to the current button
     div.classList.add("selected");
     setSelectedOption(div.lastChild.innerHTML);
-    buttons.forEach(button => {
-        button.classList.remove('selected');
-    });
+
 }
 
 const submtAnswer = () => {
@@ -40,6 +37,11 @@ const submtAnswer = () => {
     selectedOption && selectedOption === data[subjectIndex].questions[questionIndex-1].correctAnswer ?
     setScore((prevScores) => prevScores + 2) : setScore((presentScores) => presentScores + 0);
     {questionIndex === data[subjectIndex].questions.length && (Navigate('/result', {state: {result: score}}))};
+    const buttons = document.querySelectorAll('.options');
+    buttons.forEach(button => {
+        button.classList.remove('selected');
+    });
+
 }  
 useEffect(() => {
     fetch("http://localhost:5000/api/quizData")
