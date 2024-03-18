@@ -26,9 +26,6 @@ body {
   margin: 100px 200px;
 }
 
-.selected {
-  background-color: red;
-}
 .italic {
   font-style: italic;
 } 
@@ -230,6 +227,9 @@ input {
   right: 40px;
  }
 
+ .selected {
+  background-color: rgb(69, 161, 69);
+}
  @media screen and (max-width:1200px) {
     body {
       margin: 0px;
@@ -307,8 +307,10 @@ input {
  }
  
 .create-question {
-  margin: auto; 
+  margin-left: 50px;
+  margin-bottom: 50px; 
 }
+
  .result-body {
   justify-content: flex-start;
   align-items: flex-start;
@@ -466,6 +468,9 @@ div.options, div button {
       height: 40%;
     }
   }
+  .create-question-form {
+    height: 100%;
+  }
   .start-align {
     margin-top: 70px;
     div h1, div p {
@@ -547,7 +552,7 @@ div.options, div button {
    width: 100%;
    position: relative;
    /*left: -35%;*/
- }  
+ } 
 }
  
  @media screen and (max-width:355px) {

@@ -1,13 +1,20 @@
 const mongoose = require("mongoose");
 
 const questionSchema = new mongoose.Schema({
-    subject: {type: String, required: true},
-    question: {type: String, required: true},
-    option1: {type: String, required: true},
-    option2: {type: String, required: true},
-    option3: {type: String, required: true},
-    option4: {type: String, required: true}
-}, {timestamps: true});
+    subject: { type: String, required: true },
+    question: { type: String, required: true },
+    options: {
+        type: [String],
+        required: true,
+        validate: [
+            function(options) {
+                return options && options.length === 4;
+            },
+            "Options array must have exactly 4 elements"
+        ]
+    },
+    correctAnswer: { type: Number, required: true } 
+}, { timestamps: true });
 
 const questionModel = mongoose.model("Question", questionSchema);
 module.exports = questionModel;

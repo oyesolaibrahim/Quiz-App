@@ -25,6 +25,7 @@ const UserLogin = () => {
       axios(fetching)
       .then((result) => {
         const token = result.data.token;
+        //const decoded = result.data.decoded;
         const user = result.data.user.firstName;
         const email = result.data.user.email;
         const password = result.data.user.password;
@@ -32,9 +33,11 @@ const UserLogin = () => {
          console.log(user);
          console.log(email);
          console.log(password);
+         //console.log(decoded);
          localStorage.setItem('token', token);
+         localStorage.setItem('user', user);
          setLogin(true);
-         Navigate("/subjects", {state: {email, password}});
+         Navigate("/subjects");
 
         })
       . catch ((error) => {

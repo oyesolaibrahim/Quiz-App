@@ -1,4 +1,4 @@
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
 
@@ -7,12 +7,12 @@ const CreateQuestion = () => {
   let Navigate = useNavigate();
   const [subject, setSubject] = useState("");
   const [question, setQuestion] = useState("");
-  const [option1, setOption1] = useState("");
-  const [option2, setOption2] = useState("");
-  const [option3, setOption3] = useState("");
-  const [option4, setOption4] = useState("");
+  const [options, setOptions] = useState(["", "", "", ""]);
+  const [correctAnswer, setCorrectAnswer] = useState("");
+  const [token, setToken] = useState(localStorage.getItem('token'));
   const [error, setError] = useState(null);
-  
+  const [login, setLogin] = useState(false);
+
     const createQuestion = (e) => {
     e.preventDefault();
     
@@ -22,15 +22,14 @@ const CreateQuestion = () => {
       data: {
         subject,
         question,
-        option1,
-        option2,
-        option3,
-        option4
+        options,
+        correctAnswer
       }
     }
     axios(configuration)
     .then((result) => {
        console.log(result);
+       setLogin(true);
        //Navigate('/subjects');
       })
     .catch ((error) => {
@@ -40,8 +39,14 @@ const CreateQuestion = () => {
   
   }    
   
+  const optionChange = (index, value) => {
+    const newOptions = [...options];
+    newOptions[index] = value; 
+    setOptions(newOptions); 
+    };
   return (
       <>   
+      {token ? (
       <body className="create-question">
            <h3 className="error">{error}</h3>
               <div>
@@ -52,7 +57,7 @@ const CreateQuestion = () => {
                   <button id="try-it-free"><strong>Try it free 7 days</strong> then $20/mo. thereafter</button>
               </div>
 
-              <div className="form-container">
+              <div className="form-container create-question-form">
                   <form onSubmit={(e)=>createQuestion(e)}>
                       <label htmlFor="subject">
                       </label>
@@ -62,21 +67,16 @@ const CreateQuestion = () => {
                       </label>
                       <input type="text" placeholder="Question" value={question} onChange={(e) => setQuestion(e.target.value)}/>
 
-                      <label htmlFor="optionA">
-                      </label>
-                      <input type="text" placeholder="option A" value={option1} onChange={(e) => setOption1(e.target.value)}/>
+                      {options.map((option, index) => (
+                           <div key={index}>
+                                <label htmlFor={"option" + (index + 1)}></label>
+                                <input type="text" placeholder={"Option " + (index + 1)} value={option} onChange={(e) => optionChange(index, e.target.value)} />
+                            </div>
+                          ))}
 
-                      <label htmlFor="optionB">
+                      <label htmlFor="correctAnswer">
                       </label>
-                      <input type="text" placeholder="option B" value={option2} onChange={(e) => setOption2(e.target.value)}/>
-
-                      <label htmlFor="optionC">
-                      </label>
-                      <input type="text" placeholder="option C" value={option3} onChange={(e) => setOption3(e.target.value)}/>
-
-                      <label htmlFor="optionD">
-                      </label>
-                      <input type="text" placeholder="option D" value={option4} onChange={(e) => setOption4(e.target.value)}/>
+                      <input type="number" placeholder="correctAnswer" value={correctAnswer} onChange={(e) => setCorrectAnswer(e.target.value)}/>
 
                       <button type="SUBMIT" className="signup" onClick={(e) => {createQuestion(e)}}>Create</button> 
 
@@ -84,6 +84,9 @@ const CreateQuestion = () => {
           </div>
       </div>
       </body>
+      ) : (
+        <h3 className="error">You have to be logged in before you can view this page, click <Link to={"/user/login"} style={{color: "white" }}> here </Link> to log in </h3>
+)}
       </>
   )
 }

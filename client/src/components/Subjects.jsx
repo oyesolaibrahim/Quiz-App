@@ -10,14 +10,14 @@ const Subjects = () => {
     let [subjectIndex, setSubjectIndex] = useState(0);
     let [data, setData] = useState(null);
     let [login, setLogin] = useState(false);
-    let [user, setUser] = useState("");
     //const [email, setEmail] = useState(state.email);
     //const [password, setPassword] = useState(state.password);
     //const [error, setError] = useState(null);
     const [token, setToken] = useState(localStorage.getItem('token'));
-
+    const [user, setUser] = useState(localStorage.getItem('user'));
 
     useEffect(() => {
+         
         fetch("http://localhost:5000/api/quizData")
         .then (res => {
             return res.json();
@@ -47,19 +47,24 @@ const Subjects = () => {
     Navigate("user/login")    
     setLogin(false)
     setToken(null);
+    setUser(null);
   };
         //setSubjectIndex(++subjectIndex);
         //setQuestion(subjectIndex)
         //console.log(setQuestion);
     const goToSuitableQuestion = (e) => {
-        console.log(e.target.id);
-        console.log(e.target.lastChild.innerHTML);
+        const div = e.currentTarget;
+        console.log(div.id);
+        console.log(div.lastChild.innerHTML);
 
-        e.target.id === mathematics 
-        ? (Navigate('/question', { state: { suitableQuestion: true }})): e.target.id === UOE
-        ? (Navigate('/question', { state: { suitableQuestion2: true }})): e.target.id === PHY
-        ? (Navigate('/question', { state: { suitableQuestion3: true }})): e.target.id === CHM
-        ? (Navigate('/question', { state: { suitableQuestion4: true }}))
+        div.id === mathematics ? 
+        (Navigate('/question', { state: { suitableQuestion: true }}))
+        : div.id === UOE ? 
+        (Navigate('/question', { state: { suitableQuestion2: true }}))
+        : div.id === PHY ? 
+        (Navigate('/question', { state: { suitableQuestion3: true }}))
+        : div.id === CHM ? 
+        (Navigate('/question', { state: { suitableQuestion4: true }}))
         : (console.log("condition is not met"));
     }
      return (

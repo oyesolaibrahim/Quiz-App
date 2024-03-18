@@ -19,9 +19,18 @@ const Navigate = useNavigate();
 
 
 const optio = (e) => {
-    console.log(e.target.classList);
-    e.target.classList.add("selected");
-    setSelectedOption(e.target.lastChild.innerHTML);
+    const div = e.currentTarget;
+    const buttons = document.querySelectorAll('.options');
+    buttons.forEach(button => {
+        button.classList.remove('selected');
+    });
+
+    // Add the 'selected' class to the current button
+    div.classList.add("selected");
+    setSelectedOption(div.lastChild.innerHTML);
+    buttons.forEach(button => {
+        button.classList.remove('selected');
+    });
 }
 
 const submtAnswer = () => {
