@@ -41,7 +41,7 @@ const AdminSignUp = () => {
   
   return (
       <>   
-      <body className="form-body">
+      <div className="form-body body">
       {signup ? (Navigate('/admin/login')
        // <p className="text-success center">You Are Registered Successfully</p>
       ) : (
@@ -80,7 +80,7 @@ const AdminSignUp = () => {
           </form>
           </div>
       </div>
-      </body>
+      </div>
       </>
   )
 }

@@ -8,7 +8,7 @@ const Result = () => {
     const score = location.state.result;
     return (
         <>
-                <body className="flex start-align result-body">
+            <div className="flex start-align result-body body">
                 <div>
                     <h1 className="completed">Quiz completed <span>You scored...</span></h1>
                 </div>
@@ -19,7 +19,7 @@ const Result = () => {
           
                     <Link to={'/subjects'} style={{ textDecoration: "none", color: "white" }}><button className="play-again"> Play Again</button></Link>
                </div>
-            </body>
+            </div>
         </>
     )
 }

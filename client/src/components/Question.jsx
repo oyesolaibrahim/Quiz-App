@@ -74,7 +74,7 @@ login && setToken(localStorage.getItem('token'));
 //!login && setLogin(true)
 }, [])
 
-const handleLogout = () => {
+const Logout = () => {
     localStorage.removeItem('token');
     Navigate("/user/login")
     setToken(null);
@@ -85,12 +85,12 @@ console.log(score)
 return (
         <>
        {token ? ( 
-     <      body>
+     <div className="body">
       {token ? (
         <div className="flex welcome-div">
           <Link to={"/subjects"} style={{ textDecoration: "none", color: "white" }} className="header-login left"><i class="fa fa-angle-double-left" aria-hidden="true"></i>
             Back</Link>
-          <Link style={{ textDecoration: "none", color: "white" }} className="header-login right" onClick={handleLogout}>Logout</Link>
+          <Link style={{ textDecoration: "none", color: "white" }} className="header-login right" onClick={Logout}>Logout</Link>
         </div>
       ) : (
         Navigate("/user/login")
@@ -124,7 +124,7 @@ return (
           <button onClick={submtAnswer} disabled={!selectedOption}>Submit Answer</button>
       </div>
       </div>
-    </body>
+    </div>
             ) : (
         <h3 className="error">You have to be logged in before you can view this page, click <Link to={"/user/login"} style={{color: "white" }}> here </Link> to log in </h3>
             )}

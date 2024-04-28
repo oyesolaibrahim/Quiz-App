@@ -47,7 +47,7 @@ const CreateQuestion = () => {
   return (
       <>   
       {token ? (
-      <body className="create-question">
+      <div className="create-question body">
            <h3 className="error">{error}</h3>
               <div>
                   <h2 className="admin-singup center">Create Question</h2>
@@ -83,7 +83,7 @@ const CreateQuestion = () => {
           </form>
           </div>
       </div>
-      </body>
+      </div>
       ) : (
         <h3 className="error">You have to be logged in before you can view this page, click <Link to={"/user/login"} style={{color: "white" }}> here </Link> to log in </h3>
 )}

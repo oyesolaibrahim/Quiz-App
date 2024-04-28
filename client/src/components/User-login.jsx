@@ -47,7 +47,7 @@ const UserLogin = () => {
       }
     return (
 <> 
-         <div className="login-form">
+         <div className="login-form body">
          
        {!login &&   <h3 className="error">{error}</h3>}
             <div>

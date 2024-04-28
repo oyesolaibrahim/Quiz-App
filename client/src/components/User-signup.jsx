@@ -41,7 +41,7 @@ const UserSignUp = () => {
     
     return (
         <>   
-        <body className="form-body">
+        <div className="form-body">
         {signup ? (Navigate('/user/login')
          // <p className="text-success center">You Are Registered Successfully</p>
         ) : (
@@ -80,7 +80,7 @@ const UserSignUp = () => {
             </form>
             </div>
         </div>
-        </body>
+        </div>
         </>
     )
 }

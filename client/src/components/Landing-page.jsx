@@ -10,7 +10,7 @@ const LandingPage = () => {
                 <li><Link className="header-signup" to={'/user/signup'}>Signup</Link></li>
             </ul>
         </header>
-        <body className="flex landing-page">
+        <div className="flex landing-page body">
             <div>
                 <h1>Welcome to the Quiz App</h1>
                 <h2>Challenge yourself with a wide range of quizzes on various subjects.
@@ -23,7 +23,7 @@ const LandingPage = () => {
             <div>  
                 <img src={image} alt="man"></img>        
             </div>
-        </body>
+        </div>
         </>
     )
 }

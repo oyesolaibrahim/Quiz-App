@@ -74,7 +74,7 @@ const Subjects = () => {
      
      <>    
         {token  ? ( 
-            <body className="">  
+        <div className="body">  
         <div className="flex welcome-div">
           <h4 className="left">Welcome <span style={{fontStyle: "italic"}}>{user || admin }</span>! You are logged in.</h4>
           <Link style={{ textDecoration: "none", color: "white" }} className="header-login right" onClick={logout}>Logout</Link>
@@ -105,7 +105,7 @@ const Subjects = () => {
                     </div>
                 </div>
             </div>
-            </body>
+            </div>
       ) : (
         <h3 className="error">You have to be logged in before you can view this page, click <Link to={"/user/login"} style={{color: "white" }}> here </Link> to log in </h3>
 )}
