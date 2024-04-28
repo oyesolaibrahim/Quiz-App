@@ -2,6 +2,7 @@ const express = require("express");
 const app = express();
 const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
+const cors = require("cors");
 const quizData = require("./assets/quizData.json");
 //const dotenv = require (".env");
 //const flash = require("connect-flash");
@@ -17,6 +18,24 @@ mongoose.connect("mongodb://0.0.0.0:27017/Quiz_App")
     console.log("Error connecting to DB:", err.message);
 });
 
+const corsConfig = {
+    origin: true,
+    credentials: true,
+    allowHeaders: [
+      "Origin",
+      "X-Requested-With",
+      "Content-Type",
+      "Accept",
+      "X-Access-Token",
+      "Authorization",
+      "Access-Control-Allow-Origin",
+      "access-control-allow-Origin"
+    ]
+  }
+  
+  app.use(cors(corsConfig));
+
+  
 //dotenv.config();
 app.use(bodyParser.json());
 

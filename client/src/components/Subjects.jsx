@@ -1,7 +1,6 @@
 import { Link, useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import { useEffect, useState } from "react";
-import axios from "axios";
 
 const Subjects = () => {
     let location = useLocation();    
@@ -9,15 +8,17 @@ const Subjects = () => {
     let Navigate = useNavigate();
     let [subjectIndex, setSubjectIndex] = useState(0);
     let [data, setData] = useState(null);
-    let [login, setLogin] = useState(false);
     //const [email, setEmail] = useState(state.email);
     //const [password, setPassword] = useState(state.password);
     //const [error, setError] = useState(null);
+    //const [token, setToken] = useState(localStorage.removeItem('token'));
     const [token, setToken] = useState(localStorage.getItem('token'));
+    const [login, setLogin] = useState(true);
     const [user, setUser] = useState(localStorage.getItem('user'));
-
+    const [admin, setAdmin] = useState(localStorage.getItem('admin'));
+            
     useEffect(() => {
-         
+        
         fetch("http://localhost:5000/api/quizData")
         .then (res => {
             return res.json();
@@ -27,13 +28,14 @@ const Subjects = () => {
             setData(dataQuiz);
         })
         .catch((err) => {
-        console.log(err);
+            console.log(err);
         })
         
         //setUser(state.user);
-        !login && setLogin(true)
+        //token && (localStorage.getItem('login'))
     }, [])
-        
+    console.log(login)
+    
     let mathematics = data ? data[subjectIndex].subject : "";
     let UOE = data ? data[subjectIndex+1].subject : "";
     let PHY = data ? data[subjectIndex+2].subject : "";
@@ -42,13 +44,14 @@ const Subjects = () => {
     console.log(UOE);
     console.log(PHY);
 
-    const handleLogout = () => {
+    const logout = () => {
     localStorage.removeItem('token');
     Navigate("user/login")    
-    setLogin(false)
     setToken(null);
     setUser(null);
+    setLogin(false)
   };
+  console.log(localStorage);
         //setSubjectIndex(++subjectIndex);
         //setQuestion(subjectIndex)
         //console.log(setQuestion);
@@ -70,11 +73,11 @@ const Subjects = () => {
      return (
      
      <>    
-        {token ? ( 
+        {token  ? ( 
             <body className="">  
         <div className="flex welcome-div">
-          <h4 className="left">Welcome {user}! You are logged in.</h4>
-          <Link style={{ textDecoration: "none", color: "white" }} className="header-login right" onClick={handleLogout}>Logout</Link>
+          <h4 className="left">Welcome <span style={{fontStyle: "italic"}}>{user || admin }</span>! You are logged in.</h4>
+          <Link style={{ textDecoration: "none", color: "white" }} className="header-login right" onClick={logout}>Logout</Link>
         </div>
             
             <div className="flex start-align">

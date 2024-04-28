@@ -233,9 +233,11 @@ input {
  @media screen and (max-width:1200px) {
     body {
       margin: 0px;
+      overflow-x: hidden;
     }
     .landing-page {
       margin: 100px;
+      margin-left: 20px;
     }
     .start-align {
       div h1, div p {
@@ -398,6 +400,7 @@ div.options, div button {
   
       & > h6 {
         margin-right: -10px;
+        max-width: 300px;
       }
    
     }
@@ -432,7 +435,11 @@ div.options, div button {
   
  }
  @media screen and (max-width:545px) {
-  
+  .question {
+    div.options, div button {
+      width: 90%;
+    }
+  }
   .score-container{
     width: 100%;
     margin: auto 10%;
@@ -597,7 +604,7 @@ div.options, div button {
   }
   .question {
     div.options, div button {
-      width: 150%;
+      width: 90%;
     }
   }
   .options2 {
@@ -636,7 +643,7 @@ div.options, div button {
  @media screen and (max-width:270px) {
   .question {
     div.options, div button {
-      width: 100%;
+      width: 90%;
     }
   }
   .options2 {

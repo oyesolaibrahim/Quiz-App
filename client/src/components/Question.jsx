@@ -11,7 +11,7 @@ const [score, setScore] = useState(0);
 let [questionIndex, setQuestionIndex] = useState(0);
 let [optionIndex, setOptionIndex] = useState(0);
 let [question, setQuestion] = useState(null);
-const [token, setToken] = useState(localStorage.getItem('token'))
+const [token, setToken] = useState(localStorage.getItem('token'));
 const [login, setLogin] = useState(false);
 const Navigate = useNavigate(); 
 //let user = location.state.user;
@@ -37,6 +37,7 @@ const submtAnswer = () => {
     selectedOption && selectedOption === data[subjectIndex].questions[questionIndex-1].correctAnswer ?
     setScore((prevScores) => prevScores + 2) : setScore((presentScores) => presentScores + 0);
     {questionIndex === data[subjectIndex].questions.length && (Navigate('/result', {state: {result: score}}))};
+    
     const buttons = document.querySelectorAll('.options');
     buttons.forEach(button => {
         button.classList.remove('selected');
@@ -69,7 +70,8 @@ useEffect(() => {
     (<></>)
 };
 
-!login && setLogin(true)
+login && setToken(localStorage.getItem('token'));
+//!login && setLogin(true)
 }, [])
 
 const handleLogout = () => {

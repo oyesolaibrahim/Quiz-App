@@ -13,7 +13,7 @@ const AdminLogin = () => {
     const [error, setError] = useState(null);
         
     
-      const handleLogin = (e) => {
+      const Login = (e) => {
         e.preventDefault();
       
       const configuration =  {
@@ -27,10 +27,12 @@ const AdminLogin = () => {
       axios(configuration)
       .then((result) => {
         const token = result.data.token;
-        console.log(result.data.user.firstName);
+        const admin = result.data.user.firstName;
+        console.log(result.data.admin.firstName);
          console.log(result);
          console.log(token);
          localStorage.setItem('token', token);
+         localStorage.setItem('admin', admin);
          setLogin(true);
          Navigate("/subjects");
         })
@@ -54,7 +56,7 @@ const AdminLogin = () => {
 		    </div>
         
 		    <div className="form-container">
-		    	<form action="" onSubmit={(e)=>handleLogin(e)}>
+		    	<form action="" onSubmit={(e)=>Login(e)}>
                     <label htmlFor="email">
                     </label>
 		    		<input type="email" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)}/>
@@ -62,7 +64,7 @@ const AdminLogin = () => {
                     <label htmlFor="password">
                     </label>
 		    		<input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-		    		<button type="SUBMIT" className="signup" onClick={(e) => {handleLogin(e)}}>Login</button> 
+		    		<button type="SUBMIT" className="signup" onClick={(e) => {Login(e)}}>Login</button> 
 
 		    	</form>
 		    </div>

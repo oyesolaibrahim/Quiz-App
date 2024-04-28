@@ -13,8 +13,8 @@ const LandingPage = () => {
         <body className="flex landing-page">
             <div>
                 <h1>Welcome to the Quiz App</h1>
-                <h2>Challenge yourself with a variety of quizzes on different topics.
-                     Are you ready to test your knowledge?</h2>
+                <h2>Challenge yourself with a wide range of quizzes on various subjects.
+                Are you prepared to put your knowledge to the test ?</h2>
                 <p className="italic">Test your knowledge and have fun!</p>
                 
                 <Link style={{ textDecoration: "none", color: "white" }} className="header-login" to={'/user/login'}>Login</Link>

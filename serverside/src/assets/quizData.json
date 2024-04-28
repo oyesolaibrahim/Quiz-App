@@ -3,7 +3,7 @@
     "subject": "Mathematics",
     "questions": [
       {
-        "question": "A group of market women sell at least one of yam, plantain and maize. 12 of them sell maize, 10 sell yam and 14 sell plantain. 5 sell plantain and maize, 4 sell yam and maize, 2 sell yam and plantain only while 3 sell all the three items. How many women are in the group?",
+        "question": "A group of market women sell at least one of yam, plantain and maize. Twelve of them sell maize, ten sell yam and fourteen sell plantain. Five sell plantain and maize, four sell yam and maize, two sell yam and plantain only while three sell all the three items. How many women are in the group?",
         "options": ["25", "19", "18", "17"],
         "correctAnswer": "25"
       },

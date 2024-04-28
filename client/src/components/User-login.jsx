@@ -11,7 +11,7 @@ const UserLogin = () => {
     const [error, setError] = useState(null);
         
     
-      const handleLogin = (e) => {
+      const Login = (e) => {
         e.preventDefault();
       
       const fetching =  {
@@ -25,34 +25,34 @@ const UserLogin = () => {
       axios(fetching)
       .then((result) => {
         const token = result.data.token;
-        //const decoded = result.data.decoded;
         const user = result.data.user.firstName;
         const email = result.data.user.email;
         const password = result.data.user.password;
-         console.log(result);
-         console.log(user);
-         console.log(email);
-         console.log(password);
-         //console.log(decoded);
-         localStorage.setItem('token', token);
-         localStorage.setItem('user', user);
-         setLogin(true);
+        console.log(result);
+        console.log(user);
+        console.log(email);
+        console.log(password);
+        localStorage.setItem('token', token);
+        localStorage.setItem('user', user);
+        localStorage.setItem('login', true);
+        setLogin(true);
+         console.log(login);
          Navigate("/subjects");
-
         })
       . catch ((error) => {
         console.log('Error logging in', error.response.data.message);
+        console.log('Error logging in', error);
         setError(error.response.data.message)
       }) 
       }
     return (
 <> 
-         <body className="login-form">
+         <div className="login-form">
          
-       {!login &&    <h3 className="error">{error}</h3>}
+       {!login &&   <h3 className="error">{error}</h3>}
             <div>
                 <h2 className="admin-singup">User Login</h2>
-                <p class="error"></p>
+                <p className="error"></p>
             </div>
         <div>
 		    <div>
@@ -60,7 +60,7 @@ const UserLogin = () => {
 		    </div>
         
 		    <div className="form-container">
-		    	<form action="" onSubmit={(e)=>handleLogin(e)}>
+		    	<form action="" onSubmit={(e)=>Login(e)}>
                     <label htmlFor="email">
                     </label>
 		    		<input type="email" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)}/>
@@ -68,12 +68,12 @@ const UserLogin = () => {
                     <label htmlFor="password">
                     </label>
 		    		<input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-		    		<button type="SUBMIT" className="signup" onClick={(e) => {handleLogin(e)}}>Login</button> 
+		    		<button type="SUBMIT" className="signup" onClick={(e) => {Login(e)}}>Login</button> 
 
 		    	</form>
 		    </div>
 	    </div>
-        </body>
+      </div>
     </>
     )
 }
