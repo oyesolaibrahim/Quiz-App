@@ -104,7 +104,7 @@ return (
 
       </div>
 
-      <div>
+      <div id="option-container">
           <div className="flex start options" onClick={optio}>
               <h6>A</h6>
               <p>{data ? data[subjectIndex].questions[questionIndex].options[optionIndex] : ""}</p>
