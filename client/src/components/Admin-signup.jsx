@@ -29,7 +29,7 @@ const AdminSignUp = () => {
     .then((result) => {
        console.log(result);
        setSignup(true);
-       Navigate('/user/login')
+       Navigate('/admin/login')
       })
     . catch ((error) => {
       console.log('Error during signup', error);
@@ -42,15 +42,11 @@ const AdminSignUp = () => {
   return (
       <>   
       <div className="form-body body">
-      {signup ? (Navigate('/admin/login')
-       // <p className="text-success center">You Are Registered Successfully</p>
-      ) : (
         <></>
-      )}
           {!signup &&    <h3 className="error">{error}</h3>}
               <div>
                   <h2 className="admin-singup center">Admin Signup</h2>
-                  <p class="error"></p>
+                  <p className="error"></p>
               </div>
               <div>
               <div>

@@ -11,7 +11,8 @@ const [score, setScore] = useState(0);
 let [questionIndex, setQuestionIndex] = useState(0);
 let [optionIndex, setOptionIndex] = useState(0);
 let [question, setQuestion] = useState(null);
-const [token, setToken] = useState(localStorage.getItem('token'));
+const [token, setToken] = useState(sessionStorage.getItem('token'));
+const [adminToken, setAdminToken] = useState(sessionStorage.getItem('adminToken'));
 const [login, setLogin] = useState(false);
 const Navigate = useNavigate(); 
 //let user = location.state.user;
@@ -75,18 +76,18 @@ login && setToken(localStorage.getItem('token'));
 }, [])
 
 const Logout = () => {
-    localStorage.removeItem('token');
-    Navigate("/user/login")
-    setToken(null);
+    token ? (setToken(null) && localStorage.removeItem('token') && Navigate("user/login")) : 
+    (setAdminToken(null) && localStorage.removeItem("adminToken") && Navigate("admin/login")) ;
+    setLogin(false)
   };
 
 console.log(selectedOption)
 console.log(score)
 return (
         <>
-       {token ? ( 
+       {token || adminToken ? ( 
      <div className="body">
-      {token ? (
+      {token || adminToken ? (
         <div className="flex welcome-div">
           <Link to={"/subjects"} style={{ textDecoration: "none", color: "white" }} className="header-login left"><i class="fa fa-angle-double-left" aria-hidden="true"></i>
             Back</Link>

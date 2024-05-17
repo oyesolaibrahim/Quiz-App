@@ -12,7 +12,7 @@ const UserSignUp = () => {
     const [signup, setSignup] = useState(false);
     const [error, setError] = useState(null)
     
-      const handleSignup = (e) => {
+      const Signup = (e) => {
       e.preventDefault();
       
       const fetching =  {
@@ -49,8 +49,6 @@ const UserSignUp = () => {
         )}
             {!signup &&    <h3 className="error">{error}</h3>}
                 <div>
-                    <h2 className="admin-singup center">User Signup</h2>
-                    <p class="error"></p>
                 </div>
                 <div>
                 <div>
@@ -58,7 +56,7 @@ const UserSignUp = () => {
                 </div>
 
                 <div className="form-container">
-                    <form onSubmit={(e)=>handleSignup(e)}>
+                    <form onSubmit={(e)=>Signup(e)}>
                         <label htmlFor="firstname">
                         </label>
                         <input type="text" placeholder="First Name" value={firstName}  onChange={(e) => setFirstName(e.target.value)}/>
@@ -74,7 +72,7 @@ const UserSignUp = () => {
                         <label htmlFor="password">
                         </label>
                         <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-                        <button type="SUBMIT" className="signup" onClick={(e) => {handleSignup(e)}}>Signup</button> 
+                        <button type="SUBMIT" className="signup" onClick={(e) => {Signup(e)}}>Signup</button> 
 
                 <h6>By clicking the button, you are agreeing to our <a href="#">Terms and Services</a></h6>
             </form>

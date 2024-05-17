@@ -10,10 +10,9 @@ const questionSchema = new mongoose.Schema({
             function(options) {
                 return options && options.length === 4;
             },
-            "Options array must have exactly 4 elements"
         ]
     },
-    correctAnswer: { type: Number, required: true } 
+    correctAnswer: { type: String, required: true } 
 }, { timestamps: true });
 
 const questionModel = mongoose.model("Question", questionSchema);

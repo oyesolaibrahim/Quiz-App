@@ -2,10 +2,11 @@ const User = require("../models/user.model");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 const jwtDecode = require("jwt-decode");
-
+const Score = require("../models/score.model")
 
 const addUser = (req, res) => {
     
+   
     User.findOne({email: req.body.email})
     .then(user => {
         if (user) {
@@ -57,9 +58,26 @@ const userLogin = (req, res) => {
         res.status(404).json({message: "User account not found", error});
     })
 }
-
+const userScore = (req, res) => {
+    const scoreDetails = {
+        score: req.body.score,
+        userDetails: req.query.userId
+    }
+    Score.create(scoreDetails)
+    .then((score) => {
+        return Score.findById(score._id).populate('userDetails'); 
+    })
+    .then((score) => {
+        res.status(200).json({message: "User Details Successfully Gotten", score})
+    })
+    .catch(error => {
+        console.error(error)
+        res.status(404).json({message: "Error Sending Score", error})
+    })
+}
 
 module.exports = {
     addUser,
-    userLogin
+    userLogin,
+    userScore
 }

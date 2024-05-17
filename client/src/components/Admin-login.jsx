@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
@@ -16,7 +15,7 @@ const AdminLogin = () => {
       const Login = (e) => {
         e.preventDefault();
       
-      const configuration =  {
+      const fetching =  {
         method: 'POST',
         url: 'http://localhost:5000/api/admin/login',
         data: {
@@ -24,20 +23,20 @@ const AdminLogin = () => {
           password
         }
       }
-      axios(configuration)
+      axios(fetching)
       .then((result) => {
-        const token = result.data.token;
-        const admin = result.data.user.firstName;
+        const adminToken = result.data.token;
+        const admin = result.data.admin.firstName;
         console.log(result.data.admin.firstName);
          console.log(result);
-         console.log(token);
-         localStorage.setItem('token', token);
-         localStorage.setItem('admin', admin);
+         sessionStorage.setItem('adminToken', adminToken);
+         sessionStorage.setItem('admin', admin);
          setLogin(true);
+         sessionStorage.removeItem("token")
          Navigate("/subjects");
         })
       . catch ((error) => {
-        console.log('Error logging in', error.response.data.message);
+        console.log('Error logging in', error);
         setError(error.response.data.message)
       }) 
       }
@@ -48,7 +47,6 @@ const AdminLogin = () => {
        {!login &&    <h3 className="error">{error}</h3>}
             <div>
                 <h2 className="admin-singup">Admin Login</h2>
-                <p class="error"></p>
             </div>
         <div>
 		    <div>
@@ -59,13 +57,12 @@ const AdminLogin = () => {
 		    	<form action="" onSubmit={(e)=>Login(e)}>
                     <label htmlFor="email">
                     </label>
-		    		<input type="email" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)}/>
+		    		        <input type="email" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)}/>
                     
                     <label htmlFor="password">
                     </label>
-		    		<input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-		    		<button type="SUBMIT" className="signup" onClick={(e) => {Login(e)}}>Login</button> 
-
+		    		          <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+		    		          <button type="SUBMIT" className="signup" onClick={(e) => {Login(e)}}>Login</button> 
 		    	</form>
 		    </div>
 	    </div>

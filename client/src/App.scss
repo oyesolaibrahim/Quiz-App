@@ -20,6 +20,11 @@
 .start-align {
   align-items: flex-start;
 }
+.new-question {
+  position: absolute;
+  right: 10px;
+  bottom: -30px;
+}
 body {
   background-color: #552e5a;
   color: white;
@@ -49,6 +54,7 @@ h2 {
   width: 100%;
   margin: 15px;
   cursor: pointer;
+
 
 
   &:hover {
@@ -319,6 +325,10 @@ input {
   margin-bottom: 50px; 
 }
 
+.new-question {
+  position: static;
+  padding: 20px;
+}
  .result-body {
   justify-content: flex-start;
   align-items: flex-start;
@@ -326,7 +336,7 @@ input {
 
   div h1.completed {
     min-width: 80%;
-    margin-left: 30%;
+    margin-left: 10%;
   }
  }
  .score-container{
@@ -357,6 +367,11 @@ input {
 .admin-singup {
   display: inline-block;
   margin-left: 30%;
+}
+div#frontend, div#backend, div#fullstack, div#mobile {
+  h6 {
+    margin-right: 20px;
+  }
 }
  @media screen and (max-width:740px) {
   

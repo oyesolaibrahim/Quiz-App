@@ -1,4 +1,3 @@
-import { useLocation } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import { useState } from "react";
@@ -10,7 +9,6 @@ const UserLogin = () => {
     const [login, setLogin] = useState(false);
     const [error, setError] = useState(null);
         
-    
       const Login = (e) => {
         e.preventDefault();
       
@@ -24,20 +22,21 @@ const UserLogin = () => {
       }
       axios(fetching)
       .then((result) => {
-        const token = result.data.token;
+        const userToken = result.data.token;
         const user = result.data.user.firstName;
         const email = result.data.user.email;
         const password = result.data.user.password;
-        console.log(result);
-        console.log(user);
-        console.log(email);
-        console.log(password);
-        localStorage.setItem('token', token);
-        localStorage.setItem('user', user);
-        localStorage.setItem('login', true);
+        const userId = result.data.user._id;
+        console.log(userId);
+        sessionStorage.setItem('userId', userId);
+        sessionStorage.setItem('token', userToken);
+        sessionStorage.setItem('user', user);
+        sessionStorage.setItem('login', true);
+        console.log(sessionStorage)
         setLogin(true);
          console.log(login);
          Navigate("/subjects");
+         sessionStorage.removeItem("adminToken")
         })
       . catch ((error) => {
         console.log('Error logging in', error.response.data.message);
@@ -45,13 +44,14 @@ const UserLogin = () => {
         setError(error.response.data.message)
       }) 
       }
+      
+
     return (
 <> 
       <div className="login-form body">
          
        {!login &&   <h3 className="error">{error}</h3>}
             <div className="form-header">
-                <h2 className="admin-singup">User Login</h2>
                 <p className="error"></p>
             </div>
         <div>
@@ -63,13 +63,12 @@ const UserLogin = () => {
 		    	<form action="" onSubmit={(e)=>Login(e)}>
                     <label htmlFor="email">
                     </label>
-		    		<input type="email" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)}/>
+		    		        <input type="email" placeholder="Email Address" value={email} onChange={(e) => setEmail(e.target.value)}/>
                     
                     <label htmlFor="password">
                     </label>
-		    		<input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-		    		<button type="SUBMIT" className="signup" onClick={(e) => {Login(e)}}>Login</button> 
-
+		    		        <input type="password" placeholder="Password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+		    		        <button type="SUBMIT" className="signup" onClick={(e) => {Login(e)}}>Login</button> 
 		    	</form>
 		    </div>
 	    </div>

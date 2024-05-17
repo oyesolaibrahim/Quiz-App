@@ -9,10 +9,9 @@ const CreateQuestion = () => {
   const [question, setQuestion] = useState("");
   const [options, setOptions] = useState(["", "", "", ""]);
   const [correctAnswer, setCorrectAnswer] = useState("");
-  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [adminToken, setAdminToken] = useState(localStorage.getItem('adminToken'));
   const [error, setError] = useState(null);
   const [login, setLogin] = useState(false);
-
     const createQuestion = (e) => {
     e.preventDefault();
     
@@ -30,7 +29,7 @@ const CreateQuestion = () => {
     .then((result) => {
        console.log(result);
        setLogin(true);
-       //Navigate('/subjects');
+       Navigate('/newsubjects');
       })
     .catch ((error) => {
       console.log('Error during creation', error.response.data.message);
@@ -46,12 +45,9 @@ const CreateQuestion = () => {
     };
   return (
       <>   
-      {token ? (
+      {adminToken ? (
       <div className="create-question body">
            <h3 className="error">{error}</h3>
-              <div>
-                  <h2 className="admin-singup center">Create Question</h2>
-              </div>
       <div>
               <div>
                   <button id="try-it-free"><strong>Try it free 7 days</strong> then $20/mo. thereafter</button>
@@ -76,7 +72,7 @@ const CreateQuestion = () => {
 
                       <label htmlFor="correctAnswer">
                       </label>
-                      <input type="number" placeholder="correctAnswer" value={correctAnswer} onChange={(e) => setCorrectAnswer(e.target.value)}/>
+                      <input type="text" placeholder="correctAnswer" value={correctAnswer} onChange={(e) => setCorrectAnswer(e.target.value)}/>
 
                       <button type="SUBMIT" className="signup" onClick={(e) => {createQuestion(e)}}>Create</button> 
 
@@ -85,7 +81,7 @@ const CreateQuestion = () => {
       </div>
       </div>
       ) : (
-        <h3 className="error">You have to be logged in before you can view this page, click <Link to={"/user/login"} style={{color: "white" }}> here </Link> to log in </h3>
+        <h3 className="error">You have to be logged in before you can view this page, click <Link to={"/admin/login"} style={{color: "white" }}> here </Link> to log in </h3>
 )}
       </>
   )

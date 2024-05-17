@@ -12,32 +12,6 @@ const createQuestion = (req, res) => {
         correctAnswer: req.body.correctAnswer
     }
 
-/*    const newQuestion = {
-        question: req.body.question,
-        options: [req.body.option1, req.body.option2, req.body.option3, req.body.option4],
-      };
-
-      let existingData = [];
-      try {
-    existingData = JSON.parse(fs.readFileSync(data, 'utf8'));
-    } catch (error) {
-      console.error('Error reading existing data:', error);
-      return res.status(500).json({ message: 'Server error' });
-    }
-
-    let existingSubject = existingData.find((subject) => subject.subject === req.body.subject);
-
-    if (!existingSubject) {
-      existingSubject = {
-        subject: req.body.subject,
-        questions: [],
-      };
-      existingData.push(existingSubject);
-    }
-  
-    // Add the new question to the subject's questions array
-    existingSubject.questions.push(newQuestion);
-  */
     Question.create(quizData)
     .then((question) => {
         res.status(201).json({message: "question created successfully"});
@@ -47,7 +21,47 @@ const createQuestion = (req, res) => {
     })
 }
 
+const frontEndDevelopmentQuestions = (req, res) => {
+    Question.find({subject: "Frontend"})
+    .then((gottenQuestions) => {
+        res.status(200).json({message: "Frontend Questions Gotten Successfully", gottenQuestions})
+    })
+    .catch(error => {
+        res.status(404).json({message: "Failed to fetch Frontend Questions", error})
+    })
+}
 
+const backEndDevelopmentQuestions = (req, res) => {
+    Question.find({subject: "Backend"})
+    .then((gottenQuestions) => {
+        res.status(200).json({message: "Backend Questions Gotten Successfully", gottenQuestions})
+    })
+    .catch(error => {
+        res.status(404).json({message: "Failed to fetch Backend Questions", error})
+    })
+}
+const fullstackDevelopmentQuestions = (req, res) => {
+    Question.find({subject: "Fullstack"})
+    .then((gottenQuestions) => {
+        res.status(200).json({message: "FUllstack Questions Gotten Successfully", gottenQuestions})
+    })
+    .catch(error => {
+        res.status(404).json({message: "Failed to fetch FUllstack Questions", error})
+    })
+}
+const mobileDevelopmentQuestions = (req, res) => {
+    Question.find({subject: "Mobile"})
+    .then((gottenQuestions) => {
+        res.status(200).json({message: "Mobile Questions Gotten Successfully", gottenQuestions})
+    })
+    .catch(error => {
+        res.status(404).json({message: "Failed to fetch Mobile Questions", error})
+    })
+}
 module.exports = {
-    createQuestion
+    createQuestion,
+    frontEndDevelopmentQuestions,
+    backEndDevelopmentQuestions,
+    fullstackDevelopmentQuestions,
+    mobileDevelopmentQuestions
 }

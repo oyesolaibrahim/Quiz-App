@@ -8,15 +8,13 @@ const Subjects = () => {
     let Navigate = useNavigate();
     let [subjectIndex, setSubjectIndex] = useState(0);
     let [data, setData] = useState(null);
-    //const [email, setEmail] = useState(state.email);
-    //const [password, setPassword] = useState(state.password);
-    //const [error, setError] = useState(null);
-    //const [token, setToken] = useState(localStorage.removeItem('token'));
-    const [token, setToken] = useState(localStorage.getItem('token'));
+    const [token, setToken] = useState(sessionStorage.getItem('token'));
+    const [adminToken, setAdminToken] = useState(sessionStorage.getItem('adminToken'));
     const [login, setLogin] = useState(true);
-    const [user, setUser] = useState(localStorage.getItem('user'));
-    const [admin, setAdmin] = useState(localStorage.getItem('admin'));
-            
+    const [user, setUser] = useState(sessionStorage.getItem('user'));
+    const [admin, setAdmin] = useState(sessionStorage.getItem('admin'));
+    console.log(admin)
+    
     useEffect(() => {
         
         fetch("http://localhost:5000/api/quizData")
@@ -45,13 +43,11 @@ const Subjects = () => {
     console.log(PHY);
 
     const logout = () => {
-    localStorage.removeItem('token');
-    Navigate("user/login")    
-    setToken(null);
-    setUser(null);
+    token ? (setToken(null) && setUser(null) && sessionStorage.removeItem('token') && Navigate("user/login")) : 
+    (setAdminToken(null) && setAdmin(null) && sessionStorage.removeItem("adminToken") && Navigate("admin/login")) ;
     setLogin(false)
   };
-  console.log(localStorage);
+  console.log(sessionStorage);
         //setSubjectIndex(++subjectIndex);
         //setQuestion(subjectIndex)
         //console.log(setQuestion);
@@ -73,10 +69,10 @@ const Subjects = () => {
      return (
      
      <>    
-        {token  ? ( 
+        {token || adminToken  ? ( 
         <div className="body">  
         <div className="flex welcome-div">
-          <h4 className="left">Welcome <span style={{fontStyle: "italic"}}>{user || admin }</span>! You are logged in.</h4>
+          <h4 className="left">Welcome <span style={{fontStyle: "italic"}}>{token ? user : admin }</span>! You are logged in.</h4>
           <Link style={{ textDecoration: "none", color: "white" }} className="header-login right" onClick={logout}>Logout</Link>
         </div>
             
@@ -103,7 +99,19 @@ const Subjects = () => {
                         <h6>CHM</h6>
                         <h3>Chemistry</h3>
                     </div>
-                </div>
+                    <Link to={"/newsubjects"} style={{ textDecoration: "none", color: "white" }}>
+                        <div className="flex start options2" id="Chemistry" onClick={goToSuitableQuestion}>
+                            <h3>Attempt New Questions</h3>
+                        </div>
+                    </Link>
+                    
+                    {adminToken && !token &&   
+                     (<ul className="new-question">
+                        <li><Link className="header-login" to={'/newquestion'}>Add a New Question</Link></li>
+                    </ul>)
+                    }
+                </div>       
+    
             </div>
             </div>
       ) : (

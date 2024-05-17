@@ -1,11 +1,39 @@
 import { Link } from "react-router-dom";
 import { useLocation } from "react-router-dom";
-
+import axios from "axios";
+import { useEffect } from "react";
 
 const Result = () => {
-
     const location = useLocation()
     const score = location.state.result;
+    console.log(sessionStorage)
+    const userId = sessionStorage.getItem("userId")
+    console.log(userId)
+    
+    useEffect(() => {
+      console.log(score)
+      console.log(userId)
+      const fetching =  {
+        method: 'POST',
+        url: `http://localhost:5000/api/user/score?userId=${userId}`,
+        data: {
+          score
+        }
+      }
+      axios(fetching)
+      .then((result) => {
+        console.log(result);
+        })
+      . catch ((error) => {
+        console.log('Error Sending Score', error);
+      }) 
+      
+    }, [score, userId])
+        
+    
+    
+    
+    
     return (
         <>
             <div className="flex start-align result-body body">

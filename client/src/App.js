@@ -11,6 +11,8 @@ import LandingPage from './components/Landing-page';
 import  axios  from 'axios';
 import { useState } from 'react';
 import CreateQuestion from './components/CreateQuestion';
+import New_Subjects from './components/New_Subjects';
+import New_Question from './components/New_Question';
 
 function App() {
   
@@ -50,6 +52,8 @@ const [password, setPassword] = useState("");
         <Route path='/subjects' element={<Subjects/>}></Route>
         <Route path='/result' element={<Result/>}></Route>
         <Route path='/newquestion' element={<CreateQuestion/>}></Route>
+        <Route path='/newquestions' element={<New_Question/>}></Route>
+        <Route path='/newsubjects' element={<New_Subjects/>}></Route>
       </Routes>
     </BrowserRouter>
   );

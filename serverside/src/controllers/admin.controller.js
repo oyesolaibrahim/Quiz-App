@@ -1,9 +1,11 @@
 const Admin = require("../models/admin.model"); 
 const bcrypt = require("bcrypt");
+const jwt = require("jsonwebtoken");
+const jwtDecode = require("jwt-decode");
 
 
 
-const addAdmin = (req, res) => {
+const addAdmin = (req, res) => {   
     Admin.findOne({email: req.body.email})
     .then(admin => {
         if (admin) {
@@ -41,11 +43,14 @@ const login = (req, res) => {
     .then((admin) => {
         const adminObj = {id: admin._id};
         const token = jwt.sign(adminObj, "SECRET_KEY");
+
         if (!admin) {
             return res.status(404).json({message: "Admin account with the given email does not exist."});
         } else if (!bcrypt.compareSync(password, admin.password)) {
             return res.status(404).json({message: "Incorrect Password."});
         }
+        
+        
         res.status(200).json({message: "Logged In", token, admin});
     })
     .catch(error => {
@@ -53,28 +58,7 @@ const login = (req, res) => {
     })
 }
 
-/*
-const profilePage = (req, res) => {
-    Admin.findOne({_id: req.session.adminId})
-    .then((admin) => {
-        menu.find({admin: req.session.adminId})
-        .then((menus) => {
-            res.render("admin_profile", {profile: admin, menus});
-        })
-        .catch(error => {
-           req.flash("error", error._message);
-           return res.redirect("/admin/login");
-        })
-    })
-    .catch(error => {
-       req.flash("error", error._message);
-       return res.redirect("/admin/login"); 
-    })
-}*/
-
-
 module.exports = {
     addAdmin,
     login
-   // profilePage
 }
