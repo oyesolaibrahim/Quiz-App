@@ -4,7 +4,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const quizData = require("./assets/quizData.json");
-//const dotenv = require (".env");
+const dotenv = require (".env");
 //const flash = require("connect-flash");
 const { createQuestion, frontEndDevelopmentQuestions, backEndDevelopmentQuestions, fullstackDevelopmentQuestions, mobileDevelopmentQuestions } = require("./controllers/question.controller");
 const { addUser, userLogin, userScore} = require("./controllers/user.controller");
@@ -36,7 +36,7 @@ const corsConfig = {
   app.use(cors(corsConfig));
 
   
-//dotenv.config();
+dotenv.config();
 app.use(bodyParser.json());
 
 app.get("/api/quizData", (req, res) => {
@@ -54,6 +54,6 @@ app.post("/api/user/signup", addUser);
 app.post("/api/user/login", userLogin);
 app.post("/api/user/score", userScore);
  
-app.listen(5000, () => {
+app.listen(process.env.PORT, () => {
     console.log("App running successfully")
 })
