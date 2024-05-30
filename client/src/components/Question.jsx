@@ -85,17 +85,17 @@ console.log(selectedOption)
 console.log(score)
 return (
         <>
-       {token || adminToken ? ( 
+       {/* {token || adminToken ? (  */}
      <div className="body">
-      {token || adminToken ? (
+      {/* {token || adminToken ? ( */}
         <div className="flex welcome-div">
           <Link to={"/subjects"} style={{ textDecoration: "none", color: "white" }} className="header-login left"><i class="fa fa-angle-double-left" aria-hidden="true"></i>
             Back</Link>
           <Link style={{ textDecoration: "none", color: "white" }} className="header-login right" onClick={Logout}>Logout</Link>
         </div>
-      ) : (
+      {/* ) : ( */}
         Navigate("/user/login")
-      )}
+      {/* )} */}
       <div className="flex question">
         
       <div>
@@ -126,9 +126,9 @@ return (
       </div>
       </div>
     </div>
-            ) : (
+            {/* ) : ( */}
         <h3 className="error">You have to be logged in before you can view this page, click <Link to={"/user/login"} style={{color: "white" }}> here </Link> to log in </h3>
-            )}
+            {/* )} */}
         </>
     )
 }
