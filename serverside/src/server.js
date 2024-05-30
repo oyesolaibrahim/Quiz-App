@@ -4,8 +4,7 @@ const bodyParser = require("body-parser");
 const mongoose = require("mongoose");
 const cors = require("cors");
 const quizData = require("./assets/quizData.json");
-const dotenv = require (".env");
-//const flash = require("connect-flash");
+require('dotenv').config();
 const { createQuestion, frontEndDevelopmentQuestions, backEndDevelopmentQuestions, fullstackDevelopmentQuestions, mobileDevelopmentQuestions } = require("./controllers/question.controller");
 const { addUser, userLogin, userScore} = require("./controllers/user.controller");
 const { addAdmin, login} = require("./controllers/admin.controller");
@@ -36,7 +35,6 @@ const corsConfig = {
   app.use(cors(corsConfig));
 
   
-dotenv.config();
 app.use(bodyParser.json());
 
 app.get("/api/quizData", (req, res) => {
