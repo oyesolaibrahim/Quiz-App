@@ -46,7 +46,7 @@ const submtAnswer = () => {
 
 }  
 useEffect(() => {
-    fetch("http://localhost:5000/api/quizData")
+    fetch(`${process.env.REACT_APP_SERVER}/api/quizData`)
     .then (res => {
         return res.json();
     })

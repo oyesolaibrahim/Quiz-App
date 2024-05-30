@@ -17,7 +17,7 @@ const AdminSignUp = () => {
     
     const configuration =  {
       method: 'POST',
-      url: 'http://localhost:5000/api/admin/signup',
+      url: `${process.env.REACT_APP_SERVER}/api/admin/signup`,
       data: {
         firstName,
         lastName,

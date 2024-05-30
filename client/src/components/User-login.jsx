@@ -14,7 +14,7 @@ const UserLogin = () => {
       
       const fetching =  {
         method: 'POST',
-        url: 'http://localhost:5000/api/user/login',
+        url: `${process.env.REACT_APP_SERVER}/api/user/login`,
         data: {
           email,
           password

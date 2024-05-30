@@ -17,7 +17,7 @@ const AdminLogin = () => {
       
       const fetching =  {
         method: 'POST',
-        url: 'http://localhost:5000/api/admin/login',
+        url: `${process.env.REACT_APP_SERVER}/api/admin/login`,
         data: {
           email,
           password

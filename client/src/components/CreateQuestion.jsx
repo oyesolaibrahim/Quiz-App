@@ -17,7 +17,7 @@ const CreateQuestion = () => {
     
     const configuration =  {
       method: 'POST',
-      url: 'http://localhost:5000/api/question',
+      url: `${process.env.REACT_APP_SERVER}/api/question`,
       data: {
         subject,
         question,

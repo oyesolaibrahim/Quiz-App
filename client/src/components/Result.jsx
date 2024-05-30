@@ -15,7 +15,7 @@ const Result = () => {
       console.log(userId)
       const fetching =  {
         method: 'POST',
-        url: `http://localhost:5000/api/user/score?userId=${userId}`,
+        url: `${process.env.REACT_APP_SERVER}/api/user/score?userId=${userId}`,
         data: {
           score
         }

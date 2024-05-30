@@ -27,7 +27,7 @@ const {state} = location;
 useEffect(() => {
        const fetching =  {
          method: 'GET',
-         url : `http://localhost:5000/api/frontendquestions`
+         url : `${process.env.REACT_APP_SERVER}/api/frontendquestions`
      }
      axios(fetching)
      .then((result) => {
@@ -44,7 +44,7 @@ useEffect(() => {
  useEffect(() => {
   const fetching =  {
     method: 'GET',
-    url : `http://localhost:5000/api/fullstackquestions`
+    url : `${process.env.REACT_APP_SERVER}/api/fullstackquestions`
 }
 axios(fetching)
 .then((result) => {
@@ -60,7 +60,7 @@ axios(fetching)
 useEffect(() => {
        const fetching =  {
          method: 'GET',
-         url : `http://localhost:5000/api/mobilequestions`
+         url : `${process.env.REACT_APP_SERVER}/api/mobilequestions`
      }
      axios(fetching)
      .then((result) => {
@@ -76,7 +76,7 @@ useEffect(() => {
  useEffect(() => {
         const fetching =  {
           method: 'GET',
-          url : `http://localhost:5000/api/backendquestions`
+          url : `${process.env.REACT_APP_SERVER}/api/backendquestions`
       }
       axios(fetching)
       .then((result) => {
