@@ -459,7 +459,7 @@ div.options, div button {
     }
   }
   
- .form-body, .login-form {
+ .form-body, .login-form, .create-question body {
   margin-top: 10px;
 
   .error {
@@ -514,24 +514,6 @@ div.options, div button {
  } 
  }
  @media screen and (max-width:500px) {
-  .form-body, .login-form {
-    margin-top: 70px;
-    margin-left: 10%;
-  }
-  .form-container {
-    padding:20px;
-    width:80%;
-    height:40vh;
-  
-  }
-  .form-body {
-    div.form-container {
-      height: 40%;
-    }
-  }
-  .create-question-form {
-    height: 100%;
-  }
   .start-align {
     margin-top: 70px;
     div h1, div p {
@@ -579,10 +561,7 @@ div.options, div button {
   max-width: 130px;
 }
  }
- .admin-singup {
-   display: inline-block;
-   margin-left: 20%;
- }
+ 
  }
  @media screen and (max-width:385px) {
   
@@ -618,13 +597,7 @@ div.options, div button {
    position: relative;
    /*left: -35%;*/
  } 
- .login-form {
-  margin-top: 30px;
- }
- .admin-singup {
-   display: inline-block;
-   margin-left: 15%;
- }
+ 
 }
  
  @media screen and (max-width:355px) {
