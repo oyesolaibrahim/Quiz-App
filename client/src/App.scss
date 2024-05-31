@@ -459,6 +459,29 @@ div.options, div button {
     }
   }
   
+ .form-body, .login-form {
+  margin-top: 10px;
+
+  .error {
+    display: flex;
+    justify-content: center;
+    margin: 10px auto;
+  }
+  div .admin-singup {
+    display: flex;
+    justify-content: center;
+    margin: auto;
+  }
+  .form-container {
+    width: 100vw;
+  }
+}
+.login-form {
+  margin: auto;
+}
+#try-it-free {
+  width: 100vw;
+}
  .play-again {
    width: 80%;
    margin: auto 5%;
@@ -497,7 +520,7 @@ div.options, div button {
   }
   .form-container {
     padding:20px;
-    width:100vw;
+    width:80%;
     height:40vh;
   
   }

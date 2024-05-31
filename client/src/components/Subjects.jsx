@@ -43,8 +43,8 @@ const Subjects = () => {
     console.log(PHY);
 
     const logout = () => {
-    //token ? (setToken(null) && setUser(null) && sessionStorage.removeItem('token') && Navigate("user/login")) : 
-    //(setAdminToken(null) && setAdmin(null) && sessionStorage.removeItem("adminToken") && Navigate("admin/login")) ;
+    token ? (setToken(null) && setUser(null) && sessionStorage.removeItem('token') && Navigate("user/login")) : 
+    (setAdminToken(null) && setAdmin(null) && sessionStorage.removeItem("adminToken") && Navigate("admin/login")) ;
     setLogin(false)
   };
   console.log(sessionStorage);
@@ -69,7 +69,7 @@ const Subjects = () => {
      return (
      
      <>    
-        {/* {token || adminToken  ? (  */}
+        {token || adminToken  ? ( 
         <div className="body">  
         <div className="flex welcome-div">
           <h4 className="left">Welcome <span style={{fontStyle: "italic"}}>{token ? user : admin }</span>! You are logged in.</h4>
@@ -114,9 +114,9 @@ const Subjects = () => {
     
             </div>
             </div>
-    {/* //   ) : ( */}
+       ) : ( 
         <h3 className="error">You have to be logged in before you can view this page, click <Link to={"/user/login"} style={{color: "white" }}> here </Link> to log in </h3>
-{/* )} */}
+ )} 
         </>
       )
 }

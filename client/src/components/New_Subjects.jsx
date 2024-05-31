@@ -34,13 +34,6 @@ const New_Subjects = () => {
     }, [])
     console.log(login)
     
-//    let mathematics = data ? data[subjectIndex].subject : "";
-//    let UOE = data ? data[subjectIndex+1].subject : "";
-//    let PHY = data ? data[subjectIndex+2].subject : "";
-//    let CHM = data ? data[subjectIndex+3].subject : "";
-//    console.log(mathematics)
-//    console.log(UOE);
-//    console.log(PHY);
 
     const logout = () => {
     token ? (setToken(null) && setUser(null) && sessionStorage.removeItem('token') && Navigate("user/login")) : 
@@ -48,9 +41,6 @@ const New_Subjects = () => {
     setLogin(false)
   };
   console.log(sessionStorage);
-        //setSubjectIndex(++subjectIndex);
-        //setQuestion(subjectIndex)
-        //console.log(setQuestion);
     const goToSuitableQuestion = (e) => {
         const div = e.currentTarget;
         console.log(div.id);

@@ -9,7 +9,7 @@ const { createQuestion, frontEndDevelopmentQuestions, backEndDevelopmentQuestion
 const { addUser, userLogin, userScore} = require("./controllers/user.controller");
 const { addAdmin, login} = require("./controllers/admin.controller");
 
-mongoose.connect("mongodb://0.0.0.0:27017/Quiz_App")
+mongoose.connect(process.env.MONGODB_URI)
 .then(() => {
     console.log("Database connected successfully!");
 })
